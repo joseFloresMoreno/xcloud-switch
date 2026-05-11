@@ -1,0 +1,102 @@
+# SYNC_STATUS.txt
+
+Proyecto: Xbox xCloud Client para Nintendo Switch
+Tipo: Homebrew Switch (Reverse-engineering de Greenlight)
+
+## 📍 Ubicaciones
+
+Carpeta principal (desarrollo):
+  /home/jose_flores/.openclaw/workspace/xcloud-switch/
+
+Carpeta usuario (backup):
+  C:\Users\Jose_Flores\OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA\Documentos\PROYECTOS_VSC\GREENLIGHT_SWITCH\
+
+## 🔄 Flujo de Trabajo
+
+1. DESARROLLO: Jose edita en /home/jose_flores/.openclaw/workspace/xcloud-switch/
+2. BUILD: Compilación en el mismo directorio
+3. BACKUP: Se copia a Windows cuando se solicite
+4. SYNC: Cuando hay cambios grandes, se actualiza la carpeta Windows
+
+## ✅ Estado Actual
+
+Fase 1: COMPLETADA ✅
+- Estructura: 16 archivos base + CMakeLists.txt
+- Compilación: ARM64 exitosa
+- Executable: .nro listo (165KB)
+- Documentación: README.md + START_HERE.md
+
+Fase 2-7: PENDIENTES (en desarrollo)
+- Proximas 12 horas de trabajo
+
+## 📦 Archivos Críticos
+
+IMPORTANTE - Estos son los archivos que necesitas en Switch:
+  build/xcloud-switch.nro ← INSTALA ESTO EN SWITCH
+
+Fuentes de verdad (development):
+  src/*.c / include/*.h
+  CMakeLists.txt
+
+Documentación:
+  README.md - Documentación completa
+  START_HERE.md - Guía rápida
+  PROGRESS.md - Log de desarrollo
+
+## 🔧 Para Compilar Localmente
+
+Si quieres compilar en Windows:
+1. Instala DevKitPro con devkitA64
+2. export DEVKITPRO=C:\devkitpro
+3. cd GREENLIGHT_SWITCH
+4. bash build.sh
+
+O manualmente:
+  mkdir build && cd build
+  cmake ..
+  make
+
+## 📝 Próximas Acciones
+
+Jose continuará desarrollo en:
+  /home/jose_flores/.openclaw/workspace/xcloud-switch/
+
+Cuando termine Fase 2:
+  - Se copiará a Windows
+  - Se enviará notificación
+  - Se podrá testear en Switch (si tienes HBL)
+
+## 🎯 Roadmap
+
+Fase 1: DONE ✅
+  - Build system funcional
+  - .nro generado
+
+Fase 2: IN PROGRESS 🔄
+  - REST API Xbox xCloud
+  - Autenticación Microsoft
+  - Endpoints sesión/juegos
+
+Fase 3: NEXT
+  - WebRTC negotiation
+  - Data channels
+  - SDP/ICE handling
+
+Fases 4-7: FUTURE
+  - Decodificadores
+  - Input/Output
+  - UI completa
+  - Testing
+
+## 📞 Contacto
+
+Desarrollo por: Jose Flores Moreno
+Inicio: 2026-05-11
+Ambiente: WSL2 Linux + DevKitPro
+Lenguaje: C99
+Arquitectura: ARM64 (Nintendo Switch)
+
+---
+
+Actualizado: 2026-05-11 16:15
+Status: ✅ Sincronizado

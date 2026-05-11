@@ -1,0 +1,3 @@
+/home/jose_flores/.openclaw/workspace/xcloud-switch/build/CMakeFiles/xcloud-switch.elf.dir
+/home/jose_flores/.openclaw/workspace/xcloud-switch/build/CMakeFiles/edit_cache.dir
+/home/jose_flores/.openclaw/workspace/xcloud-switch/build/CMakeFiles/rebuild_cache.dir

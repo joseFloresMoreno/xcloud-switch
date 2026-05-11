@@ -1,0 +1,154 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║   XBOX XCLOUD CLIENT PARA NINTENDO SWITCH                       ║
+║   Client Homebrew - Reverse-engineering de Greenlight          ║
+║                                                                  ║
+║   Versión: 0.1 Alpha                                            ║
+║   Fase 1: ✅ COMPLETADA                                         ║
+║   Estado: 🟢 Listo para Fase 2 (REST API)                      ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📍 UBICACIONES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Carpeta desarrollo (Linux/WSL2):
+  /home/jose_flores/.openclaw/workspace/xcloud-switch/
+
+Carpeta backup (Windows - ESTA):
+  C:\Users\Jose_Flores\OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA\Documentos\PROYECTOS_VSC\GREENLIGHT_SWITCH\
+
+📚 DOCUMENTACIÓN (LEE EN ESTE ORDEN)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. INDEX.md          ← Índice visual del proyecto
+2. START_HERE.md     ← Guía rápida de inicio
+3. README.md         ← Documentación completa
+4. PROGRESS.md       ← Log de desarrollo
+5. SYNC_STATUS.txt   ← Estado de sincronización
+
+🎮 INSTALABLE EN SWITCH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+build/xcloud-switch.nro  ← ESTE ES EL ARCHIVO QUE NECESITAS
+
+Cómo instalar:
+1. Conecta SD card a PC
+2. Copia build/xcloud-switch.nro a /switch/ en la SD
+3. Inserta SD en Switch
+4. Abre Homebrew Launcher → Busca "xCloud Switch"
+
+✅ LOGROS DE HOY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ DevKitPro instalado en ambiente Linux
+✅ Compilador ARM64 funcionando (aarch64-none-elf-gcc)
+✅ Estructura modular de 16 archivos creada
+✅ CMakeLists.txt para build system completo
+✅ Código skeleton en 8 archivos .c
+✅ Headers modulares en 7 archivos .h
+✅ ELF compilado para ARM64 (2.5MB)
+✅ Metadata creada (control.nacp)
+✅ .NRO FINAL GENERADO (165KB) ← LISTO PARA SWITCH
+✅ Documentación profesional completada
+✅ TODO SINCRONIZADO A ESTA CARPETA
+
+🔄 FLUJO DE DESARROLLO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. DESARROLLO (Linux):
+   Jose edita código en: /home/jose_flores/.openclaw/workspace/xcloud-switch/
+
+2. BUILD:
+   Compilación: bash build.sh
+
+3. SINCRONIZACIÓN (Cuando lo pidas):
+   Se copia a esta carpeta (Windows)
+
+4. ITERACIÓN:
+   Repite 1-3 según necesidad
+
+🎯 PRÓXIMAS FASES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fase 2: REST API & Autenticación (~2 horas)
+  - Implementar endpoints Xbox xCloud
+  - Autenticación Microsoft
+  - Device spoofing
+
+Fase 3: WebRTC Client (~3 horas)
+  - PeerConnection negotiation
+  - SDP exchange
+  - ICE candidates
+
+Fase 4: Decodificadores (~2 horas)
+  - H.264 video decoder (ffmpeg)
+  - Opus audio decoder (libopus)
+
+Fases 5-7: Input/Output, UI, Testing (~7 horas)
+  - Joy-Con input handling
+  - Audio/video rendering
+  - Integración y testing
+
+🛠️ REQUISITOS TÉCNICOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Para compilar localmente:
+✓ DevKitPro instalado (/opt/devkitpro en Linux)
+✓ devkitA64 (ARM64 toolchain)
+✓ CMake 3.15+
+✓ GNU Make
+✓ Linux/WSL2 recomendado
+
+Para instalar en Switch:
+✓ Nintendo Switch con HBL (Homebrew Launcher)
+✓ Game Pass activo en Xbox Live
+✓ SD card
+✓ Archivo .nro en /switch/
+
+📊 ESTADÍSTICAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Archivos de código:      16 (8 .c + 7 .h + 1 CMakeLists)
+Líneas de código:        ~850 (skeleton)
+Build system:            CMake + DevKitPro
+Arquitectura:            ARM64 (Nintendo Switch)
+Lenguaje:                C99
+Compilador:              aarch64-none-elf-gcc v15.2.0
+Tamaño .nro:             165KB
+Tiempo desarrollo F1:     ~3 horas
+Tiempo estimado total:   ~14 horas (Fases 1-7)
+
+⚖️ LEGAL & DISCLAIMER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  EDUCATIVO - Reverse-engineering de Greenlight
+⚠️  NO AFILIADO con Microsoft, Xbox o Nintendo
+⚠️  SOLO PARA USO PERSONAL en consolas que poseas
+⚠️  Game Pass requiere suscripción válida
+⚠️  Usa bajo tu propio riesgo
+
+Respeta términos de servicio de Xbox Live y Nintendo.
+
+📞 CONTACTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Desarrollo:     Jose Flores Moreno
+Fecha inicio:   2026-05-11
+Ambiente:       WSL2 Linux + DevKitPro
+Slack/Chat:     [Tu canal de comunicación]
+
+🎯 PRÓXIMO PASO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 Lee INDEX.md para ver estructura completa
+👉 Lee README.md para entender el proyecto
+👉 Jose continuará con Fase 2 (REST API)
+👉 Cuando termines, pide actualización y se sincroniza
+
+═════════════════════════════════════════════════════════════════════
+
+¡¡YA ESTÁ TODO LISTO PARA CONTINUAR!!
+
+Última actualización: 2026-05-11 16:15
+Status: ✅ Sincronizado
