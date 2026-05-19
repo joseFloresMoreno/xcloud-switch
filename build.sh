@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Xbox xCloud Switch Builder
-# Compila el proyecto y genera .nro
+# Hello Switch Builder
+# Compila el proyecto mínimo y genera .nro
 
 set -e
 
@@ -17,7 +17,7 @@ if [ ! -d "$DEVKITA64" ]; then
 fi
 
 echo "=========================================="
-echo "  Xbox xCloud Switch Builder"
+echo "  Hello Switch Builder"
 echo "=========================================="
 echo ""
 echo "DEVKITPRO: $DEVKITPRO"
@@ -27,6 +27,7 @@ echo "Build dir: $BUILD_DIR"
 echo ""
 
 # Clean and create build directory
+rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
@@ -36,7 +37,7 @@ export PATH="$DEVKITA64/bin:$PATH"
 
 # Configure
 echo "[1/4] Configuring with CMake..."
-cmake ..
+cmake -S "$PROJECT_DIR" -B "$BUILD_DIR"
 
 # Build ELF
 echo "[2/4] Compiling ELF..."
@@ -44,7 +45,7 @@ make
 
 # Create NACP metadata
 echo "[3/4] Creating metadata (control.nacp)..."
-"$DEVKITPRO/tools/bin/nacptool" --create "xCloud Switch" "Jose Flores" "0.1" control.nacp --titleid=0x0100F00011E5C000
+"$DEVKITPRO/tools/bin/nacptool" --create "Hello Switch" "Jose Flores" "0.1" control.nacp --titleid=0x0100F00011E5C000
 
 # Convert to NRO
 echo "[4/4] Converting to NRO..."
@@ -57,10 +58,10 @@ echo "  ✅ Build Complete!"
 echo "=========================================="
 echo ""
 echo "Output files:"
-echo "  ELF:  $BUILD_DIR/xcloud-switch.elf"
-echo "  NRO:  $BUILD_DIR/xcloud-switch.nro"
+echo "  ELF:  $BUILD_DIR/hello-switch.elf"
+echo "  NRO:  $BUILD_DIR/hello-switch.nro"
 echo ""
 echo "To install on Switch:"
-echo "  1. Copy xcloud-switch.nro to /switch/ folder on SD card"
+echo "  1. Copy hello-switch.nro to /switch/ folder on SD card"
 echo "  2. Run with HBL (Homebrew Launcher)"
 echo ""

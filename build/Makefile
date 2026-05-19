@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jose_flores/.openclaw/workspace/xcloud-switch
+CMAKE_SOURCE_DIR = "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jose_flores/.openclaw/workspace/xcloud-switch/build
+CMAKE_BINARY_DIR = "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jose_flores/.openclaw/workspace/xcloud-switch/build/CMakeFiles /home/jose_flores/.openclaw/workspace/xcloud-switch/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build/CMakeFiles" "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jose_flores/.openclaw/workspace/xcloud-switch/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -117,209 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named xcloud-switch.elf
+# Target rules for targets named hello-switch.elf
 
 # Build rule for target.
-xcloud-switch.elf: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 xcloud-switch.elf
-.PHONY : xcloud-switch.elf
+hello-switch.elf: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello-switch.elf
+.PHONY : hello-switch.elf
 
 # fast build rule for target.
-xcloud-switch.elf/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/build
-.PHONY : xcloud-switch.elf/fast
+hello-switch.elf/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello-switch.elf.dir/build.make CMakeFiles/hello-switch.elf.dir/build
+.PHONY : hello-switch.elf/fast
 
-src/audio_decoder.obj: src/audio_decoder.c.obj
-.PHONY : src/audio_decoder.obj
-
-# target to build an object file
-src/audio_decoder.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/audio_decoder.c.obj
-.PHONY : src/audio_decoder.c.obj
-
-src/audio_decoder.i: src/audio_decoder.c.i
-.PHONY : src/audio_decoder.i
-
-# target to preprocess a source file
-src/audio_decoder.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/audio_decoder.c.i
-.PHONY : src/audio_decoder.c.i
-
-src/audio_decoder.s: src/audio_decoder.c.s
-.PHONY : src/audio_decoder.s
-
-# target to generate assembly for a file
-src/audio_decoder.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/audio_decoder.c.s
-.PHONY : src/audio_decoder.c.s
-
-src/input_handler.obj: src/input_handler.c.obj
-.PHONY : src/input_handler.obj
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/input_handler.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/input_handler.c.obj
-.PHONY : src/input_handler.c.obj
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello-switch.elf.dir/build.make CMakeFiles/hello-switch.elf.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/input_handler.i: src/input_handler.c.i
-.PHONY : src/input_handler.i
-
-# target to preprocess a source file
-src/input_handler.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/input_handler.c.i
-.PHONY : src/input_handler.c.i
-
-src/input_handler.s: src/input_handler.c.s
-.PHONY : src/input_handler.s
-
-# target to generate assembly for a file
-src/input_handler.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/input_handler.c.s
-.PHONY : src/input_handler.c.s
-
-src/main.obj: src/main.c.obj
-.PHONY : src/main.obj
-
-# target to build an object file
-src/main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/main.c.obj
-.PHONY : src/main.c.obj
-
-src/main.i: src/main.c.i
+src/main.i: src/main.cpp.i
 .PHONY : src/main.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/main.c.i
-.PHONY : src/main.c.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello-switch.elf.dir/build.make CMakeFiles/hello-switch.elf.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/main.s: src/main.c.s
+src/main.s: src/main.cpp.s
 .PHONY : src/main.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/main.c.s
-.PHONY : src/main.c.s
-
-src/session.obj: src/session.c.obj
-.PHONY : src/session.obj
-
-# target to build an object file
-src/session.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/session.c.obj
-.PHONY : src/session.c.obj
-
-src/session.i: src/session.c.i
-.PHONY : src/session.i
-
-# target to preprocess a source file
-src/session.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/session.c.i
-.PHONY : src/session.c.i
-
-src/session.s: src/session.c.s
-.PHONY : src/session.s
-
-# target to generate assembly for a file
-src/session.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/session.c.s
-.PHONY : src/session.c.s
-
-src/ui.obj: src/ui.c.obj
-.PHONY : src/ui.obj
-
-# target to build an object file
-src/ui.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/ui.c.obj
-.PHONY : src/ui.c.obj
-
-src/ui.i: src/ui.c.i
-.PHONY : src/ui.i
-
-# target to preprocess a source file
-src/ui.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/ui.c.i
-.PHONY : src/ui.c.i
-
-src/ui.s: src/ui.c.s
-.PHONY : src/ui.s
-
-# target to generate assembly for a file
-src/ui.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/ui.c.s
-.PHONY : src/ui.c.s
-
-src/video_decoder.obj: src/video_decoder.c.obj
-.PHONY : src/video_decoder.obj
-
-# target to build an object file
-src/video_decoder.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/video_decoder.c.obj
-.PHONY : src/video_decoder.c.obj
-
-src/video_decoder.i: src/video_decoder.c.i
-.PHONY : src/video_decoder.i
-
-# target to preprocess a source file
-src/video_decoder.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/video_decoder.c.i
-.PHONY : src/video_decoder.c.i
-
-src/video_decoder.s: src/video_decoder.c.s
-.PHONY : src/video_decoder.s
-
-# target to generate assembly for a file
-src/video_decoder.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/video_decoder.c.s
-.PHONY : src/video_decoder.c.s
-
-src/webrtc_client.obj: src/webrtc_client.c.obj
-.PHONY : src/webrtc_client.obj
-
-# target to build an object file
-src/webrtc_client.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/webrtc_client.c.obj
-.PHONY : src/webrtc_client.c.obj
-
-src/webrtc_client.i: src/webrtc_client.c.i
-.PHONY : src/webrtc_client.i
-
-# target to preprocess a source file
-src/webrtc_client.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/webrtc_client.c.i
-.PHONY : src/webrtc_client.c.i
-
-src/webrtc_client.s: src/webrtc_client.c.s
-.PHONY : src/webrtc_client.s
-
-# target to generate assembly for a file
-src/webrtc_client.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/webrtc_client.c.s
-.PHONY : src/webrtc_client.c.s
-
-src/xcloud_api.obj: src/xcloud_api.c.obj
-.PHONY : src/xcloud_api.obj
-
-# target to build an object file
-src/xcloud_api.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/xcloud_api.c.obj
-.PHONY : src/xcloud_api.c.obj
-
-src/xcloud_api.i: src/xcloud_api.c.i
-.PHONY : src/xcloud_api.i
-
-# target to preprocess a source file
-src/xcloud_api.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/xcloud_api.c.i
-.PHONY : src/xcloud_api.c.i
-
-src/xcloud_api.s: src/xcloud_api.c.s
-.PHONY : src/xcloud_api.s
-
-# target to generate assembly for a file
-src/xcloud_api.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/src/xcloud_api.c.s
-.PHONY : src/xcloud_api.c.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello-switch.elf.dir/build.make CMakeFiles/hello-switch.elf.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -329,31 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... xcloud-switch.elf"
-	@echo "... src/audio_decoder.obj"
-	@echo "... src/audio_decoder.i"
-	@echo "... src/audio_decoder.s"
-	@echo "... src/input_handler.obj"
-	@echo "... src/input_handler.i"
-	@echo "... src/input_handler.s"
-	@echo "... src/main.obj"
+	@echo "... hello-switch.elf"
+	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/session.obj"
-	@echo "... src/session.i"
-	@echo "... src/session.s"
-	@echo "... src/ui.obj"
-	@echo "... src/ui.i"
-	@echo "... src/ui.s"
-	@echo "... src/video_decoder.obj"
-	@echo "... src/video_decoder.i"
-	@echo "... src/video_decoder.s"
-	@echo "... src/webrtc_client.obj"
-	@echo "... src/webrtc_client.i"
-	@echo "... src/webrtc_client.s"
-	@echo "... src/xcloud_api.obj"
-	@echo "... src/xcloud_api.i"
-	@echo "... src/xcloud_api.s"
 .PHONY : help
 
 

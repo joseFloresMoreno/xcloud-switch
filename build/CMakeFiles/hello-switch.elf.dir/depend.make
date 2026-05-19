@@ -1,2 +1,2 @@
-# Empty dependencies file for xcloud-switch.elf.
+# Empty dependencies file for hello-switch.elf.
 # This may be replaced when dependencies are built.

@@ -1,73 +1,53 @@
 cmake_minimum_required(VERSION 3.15)
 
-# Set up DevKitPro toolchain for Switch (ARM64 AArch64)
 if(NOT DEFINED DEVKITPRO)
-  set(DEVKITPRO $ENV{DEVKITPRO})
-  if(NOT DEVKITPRO)
-    if(EXISTS "/opt/devkitpro")
-      set(DEVKITPRO "/opt/devkitpro")
-    elseif(EXISTS "$ENV{HOME}/devkitpro")
-      set(DEVKITPRO "$ENV{HOME}/devkitpro")
+    if(DEFINED ENV{DEVKITPRO})
+        set(DEVKITPRO $ENV{DEVKITPRO})
     else()
-      message(FATAL_ERROR "DEVKITPRO not found")
+        set(DEVKITPRO "/opt/devkitpro")
     endif()
-  endif()
 endif()
 
-# Use devkitA64 for Switch (ARM64)
 set(DEVKITA64 ${DEVKITPRO}/devkitA64)
-set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR aarch64)
 set(CMAKE_C_COMPILER ${DEVKITA64}/bin/aarch64-none-elf-gcc)
 set(CMAKE_CXX_COMPILER ${DEVKITA64}/bin/aarch64-none-elf-g++)
-set(CMAKE_AR ${DEVKITA64}/bin/aarch64-none-elf-ar)
-set(CMAKE_RANLIB ${DEVKITA64}/bin/aarch64-none-elf-ranlib)
+set(CMAKE_C_COMPILER_WORKS 1)
+set(CMAKE_CXX_COMPILER_WORKS 1)
 
-project(xcloud-switch C CXX)
+project(hello-switch CXX)
 
-# Compiler flags for Switch (AArch64 - ARM64)
-set(SWITCH_COMPILE_FLAGS "-Wall -Wno-shift-count-overflow -O2 -fomit-frame-pointer -ffunction-sections -fdata-sections -fPIE")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SWITCH_COMPILE_FLAGS}")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SWITCH_COMPILE_FLAGS}")
+set(LIBNX ${DEVKITPRO}/libnx)
 
-# Linker flags
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -specs=${DEVKITPRO}/libnx/switch.specs -Wl,--gc-sections -pie")
+set(ARCH_FLAGS "-march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIE")
+set(WARN_FLAGS "-Wall -Wextra -Wpedantic")
+set(OPT_FLAGS "-O2 -ffunction-sections -fdata-sections")
 
-# Include directories
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-include_directories(${DEVKITPRO}/libnx/include)
-include_directories(${DEVKITPRO}/portlibs/switch/include)
+set(CMAKE_CXX_FLAGS "${ARCH_FLAGS} ${WARN_FLAGS} ${OPT_FLAGS} -fomit-frame-pointer -fstrict-volatile-bitfields -std=c++17")
+set(CMAKE_EXE_LINKER_FLAGS "-specs=${LIBNX}/switch.specs -g -Wl,-Map,output.map -Wl,--gc-sections")
 
-# Link directories
-link_directories(${DEVKITPRO}/libnx/lib)
-link_directories(${DEVKITPRO}/portlibs/switch/lib)
+include_directories(${LIBNX}/include)
+link_directories(${LIBNX}/lib)
 
-# Source files
-set(SOURCES
-    src/main.c
-    src/xcloud_api.c
-    src/session.c
-    src/webrtc_client.c
-    src/video_decoder.c
-    src/audio_decoder.c
-    src/input_handler.c
-    src/ui.c
+add_executable(hello-switch.elf
+    src/main.cpp
 )
 
-# Create executable
-add_executable(xcloud-switch.elf ${SOURCES})
-
-# Link libraries
-target_link_libraries(xcloud-switch.elf
+target_link_libraries(hello-switch.elf
     nx
 )
 
-# Print configuration
+add_custom_command(TARGET hello-switch.elf POST_BUILD
+    COMMAND ${DEVKITPRO}/tools/bin/nacptool --create "Hello Switch" "Jose Flores" "0.1" control.nacp
+    COMMAND ${DEVKITPRO}/tools/bin/elf2nro hello-switch.elf hello-switch.nro --nacp=control.nacp
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMENT "Creating NRO..."
+)
+
 message(STATUS "")
-message(STATUS "=== xcloud-switch Build Configuration (ARM64/AArch64) ===")
+message(STATUS "=== hello-switch Build Configuration ===")
 message(STATUS "DEVKITPRO: ${DEVKITPRO}")
 message(STATUS "DEVKITA64: ${DEVKITA64}")
-message(STATUS "C Compiler: ${CMAKE_C_COMPILER}")
 message(STATUS "C++ Compiler: ${CMAKE_CXX_COMPILER}")
-message(STATUS "============================================================")
+message(STATUS "Minimal libnx hello world")
+message(STATUS "========================================")
 message(STATUS "")

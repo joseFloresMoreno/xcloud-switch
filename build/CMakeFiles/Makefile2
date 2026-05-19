@@ -54,16 +54,16 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jose_flores/.openclaw/workspace/xcloud-switch
+CMAKE_SOURCE_DIR = "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jose_flores/.openclaw/workspace/xcloud-switch/build
+CMAKE_BINARY_DIR = "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build"
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/xcloud-switch.elf.dir/all
+all: CMakeFiles/hello-switch.elf.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/xcloud-switch.elf.dir/clean
+clean: CMakeFiles/hello-switch.elf.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/xcloud-switch.elf.dir
+# Target rules for target CMakeFiles/hello-switch.elf.dir
 
 # All Build rule for target.
-CMakeFiles/xcloud-switch.elf.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jose_flores/.openclaw/workspace/xcloud-switch/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target xcloud-switch.elf"
-.PHONY : CMakeFiles/xcloud-switch.elf.dir/all
+CMakeFiles/hello-switch.elf.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello-switch.elf.dir/build.make CMakeFiles/hello-switch.elf.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello-switch.elf.dir/build.make CMakeFiles/hello-switch.elf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build/CMakeFiles" --progress-num=1,2 "Built target hello-switch.elf"
+.PHONY : CMakeFiles/hello-switch.elf.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/xcloud-switch.elf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jose_flores/.openclaw/workspace/xcloud-switch/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/xcloud-switch.elf.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jose_flores/.openclaw/workspace/xcloud-switch/build/CMakeFiles 0
-.PHONY : CMakeFiles/xcloud-switch.elf.dir/rule
+CMakeFiles/hello-switch.elf.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hello-switch.elf.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build/CMakeFiles" 0
+.PHONY : CMakeFiles/hello-switch.elf.dir/rule
 
 # Convenience name for target.
-xcloud-switch.elf: CMakeFiles/xcloud-switch.elf.dir/rule
-.PHONY : xcloud-switch.elf
+hello-switch.elf: CMakeFiles/hello-switch.elf.dir/rule
+.PHONY : hello-switch.elf
 
 # clean rule for target.
-CMakeFiles/xcloud-switch.elf.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/xcloud-switch.elf.dir/build.make CMakeFiles/xcloud-switch.elf.dir/clean
-.PHONY : CMakeFiles/xcloud-switch.elf.dir/clean
+CMakeFiles/hello-switch.elf.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello-switch.elf.dir/build.make CMakeFiles/hello-switch.elf.dir/clean
+.PHONY : CMakeFiles/hello-switch.elf.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
