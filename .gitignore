@@ -1,0 +1,27 @@
+# Build output
+build/
+
+# Compiled binaries
+*.elf
+*.nro
+*.nacp
+*.o
+*.d
+*.map
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+output.map
+
+# Reference repo (not part of this project)
+greenlight-repo/
+
+# Editor / OS
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
