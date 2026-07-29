@@ -1,5 +1,8 @@
 #include "xbox_auth.h"
+<<<<<<< HEAD
 #include "ui.h"
+=======
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -59,7 +62,10 @@ static int json_long(const char* json, const char* key, long* out) {
     if (!p) return -1;
     p += strlen(search);
     while (*p == ' ') p++;
+<<<<<<< HEAD
     if (*p == '"') p++;  /* handle "XErr":"12345" (string-encoded number) */
+=======
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
     *out = atol(p);
     return 0;
 }
@@ -140,10 +146,16 @@ static int http_post_form(const char* url, const char* body,
     return (int)http_code;
 }
 
+<<<<<<< HEAD
 /* POST application/json.
  * extra_headers: optional curl_slist* of additional headers (not freed here). */
 static int http_post_json(const char* url, const char* json_body,
                           struct curl_slist* extra_headers,
+=======
+/* POST application/json */
+static int http_post_json(const char* url, const char* json_body,
+                          const char* auth_header,
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
                           DynBuf* response_out) {
     CURL* curl = curl_easy_init();
     if (!curl) return -1;
@@ -151,8 +163,13 @@ static int http_post_json(const char* url, const char* json_body,
     struct curl_slist* headers = NULL;
     headers = curl_slist_append(headers, "Content-Type: application/json");
     headers = curl_slist_append(headers, "Accept: application/json");
+<<<<<<< HEAD
     for (struct curl_slist* h = extra_headers; h; h = h->next)
         headers = curl_slist_append(headers, h->data);
+=======
+    if (auth_header)
+        headers = curl_slist_append(headers, auth_header);
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
 
     curl_easy_setopt(curl, CURLOPT_URL, url);
     curl_easy_setopt(curl, CURLOPT_POST, 1L);
@@ -493,7 +510,11 @@ static int parse_streaming_host(const char* json, char* out, int out_size) {
 }
 
 int xbox_auth_get_streaming_tokens(XboxAuthContext* ctx) {
+<<<<<<< HEAD
     if (!ctx || !ctx->xsts_token[0]) return -1;
+=======
+    if (!ctx || !ctx->xbl_token[0]) return -1;
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
 
 #ifndef HAVE_CURL
     snprintf(ctx->error, sizeof(ctx->error), "switch-curl no disponible");
@@ -503,6 +524,7 @@ int xbox_auth_get_streaming_tokens(XboxAuthContext* ctx) {
     {
         DynBuf resp = dynbuf_new();
 
+<<<<<<< HEAD
         /* GSSV XSTS: input is the XBL UserToken (from user.auth.xboxlive.com),
          * NOT the xboxlive.com XSTS token — XSTS tokens cannot be chained.
          * Relying party MUST have trailing slash; browser headers are required. */
@@ -531,26 +553,54 @@ int xbox_auth_get_streaming_tokens(XboxAuthContext* ctx) {
             "https://xsts.auth.xboxlive.com/xsts/authorize",
             body, xsts_headers, &resp);
         curl_slist_free_all(xsts_headers);
+=======
+        char body[4096 + 256];
+        snprintf(body, sizeof(body),
+                 "{"
+                 "\"RelyingParty\":\"http://gssv.xboxlive.com\","
+                 "\"TokenType\":\"JWT\","
+                 "\"Properties\":{"
+                 "\"UserTokens\":[\"%s\"],"
+                 "\"SandboxId\":\"RETAIL\""
+                 "}"
+                 "}",
+                 ctx->xbl_token);
+
+        int code = http_post_json(
+            "https://xsts.auth.xboxlive.com/xsts/authorize",
+            body, NULL, &resp);
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
 
         if ((code != 200 && code != 201) || !resp.buf) {
             long xerr = 0;
             if (resp.buf) json_long(resp.buf, "XErr", &xerr);
             snprintf(ctx->error, sizeof(ctx->error),
+<<<<<<< HEAD
                      "GSSV XSTS HTTP %d XErr %ld -- %.100s",
                      code, xerr, resp.buf ? resp.buf : "");
             ui_log("[AUTH] %s", ctx->error);
+=======
+                     "GSSV XSTS fallido (HTTP %d, XErr %ld)", code, xerr);
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
             dynbuf_free(&resp);
             return -1;
         }
 
         if (json_str(resp.buf, "Token", ctx->gssv_token, sizeof(ctx->gssv_token)) != 0) {
             snprintf(ctx->error, sizeof(ctx->error), "No se encontro GSSV Token");
+<<<<<<< HEAD
             ui_log("[AUTH] %s", ctx->error);
+=======
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
             dynbuf_free(&resp);
             return -1;
         }
 
+<<<<<<< HEAD
         ui_log("[AUTH] GSSV XSTS OK");
+=======
+        printf("[AUTH] GSSV XSTS OK\n");
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
         dynbuf_free(&resp);
     }
 
@@ -558,6 +608,7 @@ int xbox_auth_get_streaming_tokens(XboxAuthContext* ctx) {
     {
         DynBuf resp = dynbuf_new();
 
+<<<<<<< HEAD
         /* xhome login: body is {"token":"<gssv_token>","offeringId":"xhome"} */
         char xhome_body[4096 + 64];
         snprintf(xhome_body, sizeof(xhome_body),
@@ -575,19 +626,46 @@ int xbox_auth_get_streaming_tokens(XboxAuthContext* ctx) {
 
         if ((code != 200 && code != 201) || !resp.buf) {
             snprintf(ctx->error, sizeof(ctx->error),
-                     "xhome login HTTP %d -- %.80s",
+                     "xhome login HTTP %d — %.80s",
                      code, resp.buf ? resp.buf : "sin respuesta");
             ui_log("[AUTH] %s", ctx->error);
+=======
+        char auth_hdr[4096 + 32];
+        snprintf(auth_hdr, sizeof(auth_hdr), "Authorization: Bearer %s", ctx->gssv_token);
+
+        const char* body =
+            "{"
+            "\"market\":\"US\","
+            "\"language\":\"en-US\","
+            "\"systemUpdateGroup\":\"\","
+            "\"clientVersion\":\"2203.1001.4.0\""
+            "}";
+
+        int code = http_post_json(
+            "https://xhome.gssv-play-prod.xboxlive.com/v2/login/user",
+            body, auth_hdr, &resp);
+
+        if ((code != 200 && code != 201) || !resp.buf) {
+            snprintf(ctx->error, sizeof(ctx->error),
+                     "xhome login fallido (HTTP %d)", code);
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
             dynbuf_free(&resp);
             return -1;
         }
 
+<<<<<<< HEAD
         ui_log("[AUTH] xhome HTTP %d OK", code);
 
         if (json_str(resp.buf, "gsToken", ctx->gs_token, sizeof(ctx->gs_token)) != 0) {
             snprintf(ctx->error, sizeof(ctx->error),
-                     "gsToken no encontrado -- %.80s", resp.buf);
+                     "gsToken no encontrado — %.80s", resp.buf);
             ui_log("[AUTH] %s", ctx->error);
+=======
+        printf("[AUTH] xhome login HTTP %d — %.120s\n", code, resp.buf);
+
+        if (json_str(resp.buf, "gsToken", ctx->gs_token, sizeof(ctx->gs_token)) != 0) {
+            snprintf(ctx->error, sizeof(ctx->error), "No se encontro gsToken en respuesta xhome");
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
             dynbuf_free(&resp);
             return -1;
         }
@@ -635,9 +713,13 @@ int xbox_auth_refresh(XboxAuthContext* ctx) {
 
     if (code < 200 || code >= 300 || !resp.buf) {
         snprintf(ctx->error, sizeof(ctx->error),
-                 "Refresh HTTP %d -- %.80s",
+<<<<<<< HEAD
+                 "Refresh HTTP %d — %.80s",
                  code, resp.buf ? resp.buf : "sin respuesta");
         ui_log("[AUTH] %s", ctx->error);
+=======
+                 "Refresh fallido (HTTP %d)", code);
+>>>>>>> 0f6bd0d3c5630fdd4643ad8f5c3b516f7e7ba723
         dynbuf_free(&resp);
         return -1;
     }

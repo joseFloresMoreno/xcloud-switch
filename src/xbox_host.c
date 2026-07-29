@@ -178,13 +178,13 @@ int xbox_host_fetch_from_api(XboxHostList* list,
     curl_slist_free_all(headers);
     curl_easy_cleanup(curl);
 
-    if (res != CURLE_OK) {
+    if (res != CURLE_OK || !resp.buf) {
         ui_log("[CONSOLES] curl err: %s (HTTP %ld)", curl_easy_strerror(res), http_code);
         free(resp.buf);
         return -1;
     }
 
-    ui_log("[CONSOLES] HTTP %ld — %.80s", http_code,
+    ui_log("[CONSOLES] HTTP %ld -- %.80s", http_code,
            resp.buf ? resp.buf : "(empty body)");
 
     if (http_code == 200 && resp.buf) {

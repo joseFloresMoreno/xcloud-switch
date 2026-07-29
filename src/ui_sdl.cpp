@@ -256,7 +256,7 @@ static void draw_host_list_screen(void) {
         }
     }
 
-    draw_footer("[A] Conectar    [+] Salir");
+    draw_footer("[A] Conectar    [Y] Agregar consola    [X] Buscar en red    [+] Salir");
 }
 
 /* ------------------------------------------------------------------ */
