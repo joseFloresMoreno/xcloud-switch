@@ -39,6 +39,30 @@ static void draw_hint(UIScreen screen) {
 }
 #endif
 
+static void refresh_host_list(XboxHostList* hosts, XboxAuthContext* auth, bool has_internet) {
+    if (!hosts) return;
+    ui_log("[CONSOLES] Limpiando y buscando consolas activas...");
+    xbox_host_list_clear(hosts);
+
+    if (has_internet && auth && auth->xsts_token[0]) {
+        int found = xbox_host_fetch_from_api(hosts, auth->uhs, auth->xsts_token);
+        if (found < 0 && auth->refresh_token && auth->refresh_token[0]) {
+            ui_log("[CONSOLES] token vencido, renovando...");
+            if (xbox_auth_refresh(auth) == 0) {
+                xbox_auth_save(auth, XBOX_AUTH_TOKEN_FILE);
+                xbox_host_fetch_from_api(hosts, auth->uhs, auth->xsts_token);
+            }
+        }
+        xbox_host_discover(hosts);
+    }
+    /* Load optional manual IP configuration from SD card */
+    xbox_host_load_config(hosts, "/switch/greenlight/config.txt");
+    if (hosts->count == 0)
+        xbox_host_add_manual(hosts, "No se encontraron consolas", "");
+
+    ui_set_host_list(hosts, 0);
+}
+
 /* ------------------------------------------------------------------ */
 /* main                                                                 */
 /* ------------------------------------------------------------------ */
@@ -66,6 +90,7 @@ int main(void) {
     XboxHostList*    hosts = xbox_host_list_create();
     XCloudApiClient* api   = NULL;   /* created after auth */
     XboxAuthContext* auth  = xbox_auth_create();
+    bool             has_internet = true;
 
     if (ui_init() != 0) {
         xbox_auth_destroy(auth);
@@ -125,7 +150,6 @@ int main(void) {
     /* If auth succeeded, get streaming tokens and populate host list */
     if (screen == UI_SCREEN_HOST_LIST) {
         /* Check internet connectivity before any network call */
-        bool has_internet = false;
         {
             NifmInternetConnectionType ct;
             u32 ws;
@@ -167,20 +191,7 @@ int main(void) {
             api = NULL;
         }
 
-        if (has_internet) {
-            int found = xbox_host_fetch_from_api(hosts, auth->uhs, auth->xsts_token);
-            if (found < 0 && auth->refresh_token && auth->refresh_token[0]) {
-                ui_log("[CONSOLES] token vencido, renovando...");
-                if (xbox_auth_refresh(auth) == 0) {
-                    xbox_auth_save(auth, XBOX_AUTH_TOKEN_FILE);
-                    xbox_host_fetch_from_api(hosts, auth->uhs, auth->xsts_token);
-                } else {
-                    ui_log("[CONSOLES] refresh fallo: %.80s", auth->error);
-                }
-            }
-            xbox_host_discover(hosts);
-        }
-        ui_set_host_list(hosts, 0);
+        refresh_host_list(hosts, auth, has_internet);
     }
 
     /* ---------------------------------------------------------------- */
@@ -294,8 +305,18 @@ int main(void) {
                     if (hosts->count > 0) sel = (sel - 1 + hosts->count) % hosts->count;
                     ui_set_host_list(hosts, sel);
                 }
+                if (down & HidNpadButton_X) {
+                    refresh_host_list(hosts, auth, has_internet);
+                    sel = 0;
+                }
                 if ((down & HidNpadButton_A) && hosts->count > 0) {
                     XboxHost* h = &hosts->hosts[sel];
+                    if (h->ip[0] == '\0') {
+                        ui_log("[CONSOLES] Sin IP local. Crea /switch/greenlight/config.txt con 'ip=192.168.X.X'");
+                        ui_set_error("Sin IP local. Crea /switch/greenlight/config.txt con ip=TU_XBOX_IP");
+                        screen = UI_SCREEN_ERROR;
+                        break;
+                    }
                     if (session) { session_destroy(session); session = NULL; }
                     session = session_create("pending", h->ip, "", SESSION_TYPE_HOME);
                     /* Reset streaming state machine */
@@ -411,21 +432,65 @@ int main(void) {
                                                                sdp_ans, sizeof(sdp_ans));
                                 if (gret == 0 && sdp_ans[0] != '\0') {
                                     conn_sdp_done = true;
-                                    char fp[128] = "", remote_ufrag[32] = "", ice_cand[256] = "";
+                                    char fp[128] = "", remote_ufrag[32] = "", remote_pwd[64] = "", ice_cand[256] = "";
                                     webrtc_sdp_parse_answer_field(sdp_ans, "fingerprint", fp, sizeof(fp));
                                     webrtc_sdp_parse_answer_field(sdp_ans, "ice-ufrag", remote_ufrag, sizeof(remote_ufrag));
+                                    webrtc_sdp_parse_answer_field(sdp_ans, "ice-pwd", remote_pwd, sizeof(remote_pwd));
                                     webrtc_sdp_parse_answer_field(sdp_ans, "candidate", ice_cand, sizeof(ice_cand));
                                     ui_log("SDP ANS OK fp=%.30s", fp);
-                                    ui_log("remote ufrag=%s cand=%.60s", remote_ufrag, ice_cand);
+                                    ui_log("remote ufrag=%s pwd=%.10s...", remote_ufrag, remote_pwd);
                                     ui_log_dump("SDP ANSWER (raw)", sdp_ans);
 
-                                    /* The session is created with useIceConnection:false, so
-                                       the separate POST /ice endpoint 500s — our candidate was
-                                       already embedded directly in the offer SDP instead. Just
-                                       take ownership of the socket opened during offer creation. */
                                     conn_ice_sockfd = webrtc_sdp_get_ice_sockfd();
                                     conn_ice_sent    = true;
-                                    session_set_state(session, SESSION_STATE_STARTED);
+
+                                    /* Parse remote port from candidate line e.g. "a=candidate:1 1 UDP 2122260223 192.168.1.X 50001 typ host..." */
+                                    char remote_ip[64] = "";
+                                    int remote_port = 0;
+                                    if (ch->ip[0]) {
+                                        strncpy(remote_ip, ch->ip, sizeof(remote_ip) - 1);
+                                    }
+                                    if (ice_cand[0] != '\0') {
+                                        /* Scan candidate tokens: candidate:1 1 UDP prio ip port ... */
+                                        char proto[16]; u32 comp, prio;
+                                        if (sscanf(ice_cand, "1 %u %15s %u %63s %d", &comp, proto, &prio, remote_ip, &remote_port) < 5) {
+                                            /* Try alternate format if sscanf failed */
+                                            char *p = strstr(ice_cand, "typ ");
+                                            (void)p;
+                                        }
+                                    }
+                                    if (remote_port <= 0) remote_port = 10257; /* Xbox xHome local streaming port */
+
+                                    /* Perform STUN hole-punching / port probe to wake up Xbox ICE listener */
+                                    const char *local_ufrag = webrtc_sdp_get_local_ufrag();
+
+                                    /* Post local ICE candidate to server API */
+                                    char local_cand_json[512] = "";
+                                    webrtc_ice_create_local_candidate(local_ufrag, local_cand_json, sizeof(local_cand_json), NULL);
+                                    if (local_cand_json[0] && api) {
+                                        char ice_resp[512] = "";
+                                        int iceret = xcloud_api_send_ice(api, conn_session_id, local_cand_json, ice_resp, sizeof(ice_resp));
+                                        ui_log("[ICE] POST local candidate ret=%d", iceret);
+                                    }
+
+                                    /* Fetch trickled remote ICE candidate from server API */
+                                    if (api) {
+                                        char remote_ice_resp[1024] = "";
+                                        if (xcloud_api_get_ice(api, conn_session_id, remote_ice_resp, sizeof(remote_ice_resp)) == 0) {
+                                            ui_log("[ICE] GET remote ice: %.80s", remote_ice_resp);
+                                        }
+                                    }
+
+                                    remote_port = webrtc_ice_probe_remote_port(conn_ice_sockfd, remote_ip, remote_port,
+                                                                                remote_ufrag, local_ufrag, remote_pwd);
+
+                                    ui_log("DTLS connecting to %s:%d...", remote_ip, remote_port);
+                                    if (webrtc_dtls_connect(webrtc, conn_ice_sockfd, remote_ip, remote_port) == 0) {
+                                        ui_log("DTLS connected successfully!");
+                                        session_set_state(session, SESSION_STATE_STARTED);
+                                    } else {
+                                        ui_log("DTLS connect failed");
+                                    }
                                 } else {
                                     ui_log("SDP GET %d (esperando...)", gret);
                                 }

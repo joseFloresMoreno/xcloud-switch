@@ -85,7 +85,7 @@ static void draw_host_list(void) {
     if (!g_hosts || g_hosts->count == 0) {
         printf("  No se encontraron consolas.\n");
         printf("  Asegurate de estar en la misma red que tu Xbox.\n\n");
-        printf("  [Y] Agregar IP manual   [+] Salir\n");
+        printf("  [+] Salir\n");
         return;
     }
 
@@ -97,7 +97,7 @@ static void draw_host_list(void) {
         printf("       Estado: %s\n\n", xbox_host_state_string(h->state));
     }
 
-    printf("[A] Conectar   [Y] Agregar manual   [+] Salir\n");
+    printf("[A] Conectar   [+] Salir\n");
 }
 
 static void draw_connecting(void) {

@@ -161,3 +161,396 @@ v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE
 [16:49:47] state: Provisioning
 [16:49:49] state: Provisioning
 [16:49:51] state: Failed
+[16:48:37] ==== nueva sesion ====
+[16:48:37] Token OK, saltando login
+[16:48:37] Red: OK
+[16:48:37] Obteniendo gsToken...
+[16:48:37] [AUTH] GSSV XSTS HTTP 401 XErr 2148916258 -- {"Identity":"0","XErr":2148916258}
+[16:48:38] GSSV XSTS HTTP 401 XErr 2148916258 -- {"Identity":"0","XErr":2148916258}
+[16:48:38] Intentando refresh de sesion...
+[16:48:40] [AUTH] GSSV XSTS OK
+[16:48:41] [AUTH] xhome HTTP 200 OK
+[16:48:41] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[16:48:41] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[16:48:42] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[16:48:42] [CONSOLES] 1 consola(s) encontrada(s)
+[16:48:49] start id=F4001C131EC5954F
+[16:48:50] Session: 74C831BF-D330-42B0-AF84-8162CFC0D036
+[16:48:51] state: Provisioning
+[16:48:52] state: Provisioning
+[16:48:54] state: Provisioning
+[16:48:56] state: Provisioning
+[16:48:58] state: Provisioning
+[16:49:00] state: Provisioning
+[16:49:02] state: Provisioning
+[16:49:04] state: Provisioning
+[16:49:06] state: Provisioning
+[16:49:08] state: Provisioned
+[16:49:08] [SDP] ice-ufrag=fFRT
+[16:49:08] [SDP] raw 2616 bytes, JSON-escaping...
+[16:49:08] ---- SDP OFFER (sent) ----
+v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:fFRT\r\na=ice-pwd:1FMLetxgCq/3KvoqhHNXmgn1\r\na=candidate:1 1 udp 2122260223 192.168.100.13 54126 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:fFRT\r\na=ice-pwd:1FMLetxgCq/3KvoqhHNXmgn1\r\na=candidate:1 1 udp 2122260223 192.168.100.13 54126 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:fFRT\r\na=ice-pwd:1FMLetxgCq/3KvoqhHNXmgn1\r\na=candidate:1 1 udp 2122260223 192.168.100.13 54126 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:2\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n
+---- end SDP OFFER (sent) ----
+[16:49:08] SDP POST 0 
+[16:49:10] state: Provisioning
+[16:49:10] SDP ANS OK fp=sha-256 F5:9C:09:2D:55:BE:F5:A
+[16:49:10] remote ufrag=HHvg cand=
+[16:49:10] ---- SDP ANSWER (raw) ----
+{"exchangeResponse":"{\"control\":3,\"input\":8,\"message\":1,\"messageType\":\"answer\",\"sdp\":\"v=0\\r\\no=- 5431019969854748001 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 1 2\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS 0 1\\r\\nm=video 0 UDP/TLS/RTP/SAVPF 0\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:HHvg\\r\\na=ice-pwd:at4vkLID1grY7LczMrE+kdrf\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 F5:9C:09:2D:55:BE:F5:AC:97:1B:6C:2C:11:69:17:55:84:27:51:91:8F:29:82:84:04:3F:41:C5:5B:56:13:2E\\r\\na=setup:passive\\r\\na=mid:0\\r\\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:3 urn:3gpp:video-orientation\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:1 d1c8fec8-358c-431d-8ef8-a0cff404b147\\r\\na=rtcp-mux\\r\\na=rtcp-rsize\\r\\na=ssrc:2394923116 cname:EZNAeUpFAeBpzLxi\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:ltHL\\r\\na=ice-pwd:rCZ0alcuw7d/uyIp0TySVtwS\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 F5:9C:09:2D:55:BE:F5:AC:97:1B:6C:2C:11:69:17:55:84:27:51:91:8F:29:82:84:04:3F:41:C5:5B:56:13:2E\\r\\na=setup:passive\\r\\na=mid:1\\r\\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:0 ce75c4cc-4a97-49dd-ae6b-11b204d71aae\\r\\na=rtcp-mux\\r\\na=rtpmap:111 opus/48000/2\\r\\na=ssrc:484721833 cname:EZNAeUpFAeBpzLxi\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:ltHL\\r\\na=ice-pwd:rCZ0alcuw7d/uyIp0TySVtwS\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 F5:9C:09:2D:55:BE:F5:AC:97:1B:6C:2C:11:69:17:55:84:27:51:91:8F:29:82:84:04:3F:41:C5:5B:56:13:2E\\r\\na=setup:passive\\r\\na=mid:2\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\",\"sdpType\":\"answer\",\"status\":\"success\"}","errorDetails":{"code":null,"message":null}}
+---- end SDP ANSWER (raw) ----
+[16:49:12] state: Provisioning
+[16:49:14] state: Provisioning
+[16:49:16] state: Provisioning
+[16:49:18] state: Provisioning
+[16:49:20] state: Provisioning
+[16:49:22] state: Provisioning
+[16:49:24] state: Provisioning
+[16:49:26] state: Provisioning
+[16:49:28] state: Provisioning
+[16:49:30] state: Provisioning
+[16:49:32] state: Provisioning
+[16:49:34] state: Provisioning
+[16:49:36] state: Provisioning
+[16:49:38] state: Provisioning
+[16:49:40] state: Provisioning
+[16:49:42] state: Provisioning
+[16:49:44] state: Provisioning
+[16:49:46] state: Provisioning
+[16:49:48] state: Provisioning
+[16:49:50] state: Provisioning
+[16:49:52] state: Provisioning
+[16:49:54] state: Provisioning
+[16:49:56] state: Provisioning
+[16:49:58] state: Provisioning
+[16:50:00] state: Provisioning
+[16:50:02] state: Provisioning
+[17:20:12] ==== nueva sesion ====
+[17:20:12] Token OK, saltando login
+[17:20:12] Red: OK
+[17:20:12] Obteniendo gsToken...
+[17:20:12] [AUTH] GSSV XSTS OK
+[17:20:14] [AUTH] xhome HTTP 200 OK
+[17:20:14] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[17:20:14] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[17:20:15] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:20:15] [CONSOLES] 1 consola(s) encontrada(s)
+[17:20:25] start id=F4001C131EC5954F
+[17:20:27] Session: 6F54286B-1C38-4F09-A9B5-8415A9F08134
+[17:20:28] state: Provisioning
+[17:20:29] state: Provisioned
+[17:20:29] [SDP] ice-ufrag=WbmU
+[17:20:29] [SDP] raw 2616 bytes, JSON-escaping...
+[17:20:29] ---- SDP OFFER (sent) ----
+v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:WbmU\r\na=ice-pwd:5Z3pQDdVraLHOQ+rSCW7DvHZ\r\na=candidate:1 1 udp 2122260223 192.168.100.13 41913 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:WbmU\r\na=ice-pwd:5Z3pQDdVraLHOQ+rSCW7DvHZ\r\na=candidate:1 1 udp 2122260223 192.168.100.13 41913 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:WbmU\r\na=ice-pwd:5Z3pQDdVraLHOQ+rSCW7DvHZ\r\na=candidate:1 1 udp 2122260223 192.168.100.13 41913 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:2\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n
+---- end SDP OFFER (sent) ----
+[17:20:29] SDP POST 0 
+[17:20:31] state: Provisioning
+[17:20:31] SDP ANS OK fp=sha-256 DA:2E:4C:9D:B5:E0:56:9
+[17:20:31] remote ufrag=CXF9 cand=
+[17:20:31] ---- SDP ANSWER (raw) ----
+{"exchangeResponse":"{\"control\":3,\"input\":8,\"message\":1,\"messageType\":\"answer\",\"sdp\":\"v=0\\r\\no=- 4001436603918434848 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 1 2\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS 0 1\\r\\nm=video 0 UDP/TLS/RTP/SAVPF 0\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:CXF9\\r\\na=ice-pwd:IlA4QnYj0aMTHreFEGy+8thy\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 DA:2E:4C:9D:B5:E0:56:99:7B:3A:26:D0:AE:25:7E:CE:E6:91:26:32:7C:0A:A6:EF:8E:6C:65:A9:D0:63:F8:D0\\r\\na=setup:passive\\r\\na=mid:0\\r\\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:3 urn:3gpp:video-orientation\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:1 b9e150f1-db0e-408f-9cf4-e95bd128397e\\r\\na=rtcp-mux\\r\\na=rtcp-rsize\\r\\na=ssrc:2442154295 cname:uzVUBGc4oV4jC9FU\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:ejiH\\r\\na=ice-pwd:OIGmKmAorZPncz2GkRyBWSZD\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 DA:2E:4C:9D:B5:E0:56:99:7B:3A:26:D0:AE:25:7E:CE:E6:91:26:32:7C:0A:A6:EF:8E:6C:65:A9:D0:63:F8:D0\\r\\na=setup:passive\\r\\na=mid:1\\r\\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:0 af9788a5-d50e-40e6-94f2-ba199f9471a6\\r\\na=rtcp-mux\\r\\na=rtpmap:111 opus/48000/2\\r\\na=ssrc:711318593 cname:uzVUBGc4oV4jC9FU\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:ejiH\\r\\na=ice-pwd:OIGmKmAorZPncz2GkRyBWSZD\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 DA:2E:4C:9D:B5:E0:56:99:7B:3A:26:D0:AE:25:7E:CE:E6:91:26:32:7C:0A:A6:EF:8E:6C:65:A9:D0:63:F8:D0\\r\\na=setup:passive\\r\\na=mid:2\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\",\"sdpType\":\"answer\",\"status\":\"success\"}","errorDetails":{"code":null,"message":null}}
+---- end SDP ANSWER (raw) ----
+[17:20:31] DTLS connecting to :5000...
+[17:20:31] [DTLS] Initiating handshake with :5000...
+[17:20:31] [DTLS] Starting SSL handshake loop...
+[17:20:31] [DTLS] Handshake failed (-0x7100): SSL - Bad input parameters to function
+[17:20:31] DTLS connect failed
+[17:20:33] state: Provisioning
+[17:20:35] state: Provisioning
+[17:20:37] state: Provisioning
+[17:20:39] state: Provisioning
+[17:20:41] state: Provisioning
+[17:20:43] state: Provisioning
+[17:20:45] state: Provisioning
+[17:20:47] state: Provisioning
+[17:20:49] state: Provisioning
+[17:20:51] state: Provisioning
+[17:20:53] state: Provisioning
+[17:20:55] state: Provisioning
+[17:20:57] state: Provisioning
+[17:20:59] state: Provisioning
+[17:21:01] state: Provisioning
+[17:21:03] state: Provisioning
+[17:21:05] state: Provisioning
+[17:21:07] state: Provisioning
+[17:21:09] state: Provisioning
+[17:21:11] state: Provisioning
+[17:25:31] ==== nueva sesion ====
+[17:25:31] Token OK, saltando login
+[17:25:31] Red: OK
+[17:25:31] Obteniendo gsToken...
+[17:25:32] [AUTH] GSSV XSTS OK
+[17:25:33] [AUTH] xhome HTTP 200 OK
+[17:25:33] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[17:25:33] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[17:25:34] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:25:34] [CONSOLES] 1 consola(s) encontrada(s)
+[17:25:40] [CONSOLES] Sin IP local. Crea /switch/greenlight/config.txt con 'ip=192.168.X.X'
+[17:26:01] [CONSOLES] Sin IP local. Crea /switch/greenlight/config.txt con 'ip=192.168.X.X'
+[17:31:20] ==== nueva sesion ====
+[17:31:21] Token OK, saltando login
+[17:31:22] Red: OK
+[17:31:22] Obteniendo gsToken...
+[17:31:23] [AUTH] GSSV XSTS OK
+[17:31:26] [AUTH] xhome HTTP 200 OK
+[17:31:26] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[17:31:27] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[17:31:31] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:31:31] [CONSOLES] 1 consola(s) encontrada(s)
+[17:31:33] [CONSOLES] Plantilla de config creada en /switch/greenlight/config.txt
+[17:31:41] [CONSOLES] Sin IP local. Crea /switch/greenlight/config.txt con 'ip=192.168.X.X'
+[17:33:36] ==== nueva sesion ====
+[17:33:36] Token OK, saltando login
+[17:33:36] Red: OK
+[17:33:36] Obteniendo gsToken...
+[17:33:37] [AUTH] GSSV XSTS OK
+[17:33:38] [AUTH] xhome HTTP 200 OK
+[17:33:38] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[17:33:38] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[17:33:39] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:33:39] [CONSOLES] 1 consola(s) encontrada(s)
+[17:33:39] [CONSOLES] Config IP cargada: 192.168.100.10
+[17:34:20] start id=F4001C131EC5954F
+[17:34:21] Session: F92FB7F8-5CF8-45D9-BEE9-9820C387A5B0
+[17:34:22] state: Provisioning
+[17:34:23] state: Provisioned
+[17:34:23] [SDP] ice-ufrag=Gxux
+[17:34:23] [SDP] raw 2616 bytes, JSON-escaping...
+[17:34:23] ---- SDP OFFER (sent) ----
+v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:Gxux\r\na=ice-pwd:ppwhq7PUV2DfXJ0tFXwjmxvX\r\na=candidate:1 1 udp 2122260223 192.168.100.13 54552 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:Gxux\r\na=ice-pwd:ppwhq7PUV2DfXJ0tFXwjmxvX\r\na=candidate:1 1 udp 2122260223 192.168.100.13 54552 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:Gxux\r\na=ice-pwd:ppwhq7PUV2DfXJ0tFXwjmxvX\r\na=candidate:1 1 udp 2122260223 192.168.100.13 54552 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:2\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n
+---- end SDP OFFER (sent) ----
+[17:34:23] SDP POST 0 
+[17:34:25] state: Provisioning
+[17:34:25] SDP ANS OK fp=sha-256 EE:8D:DB:E2:06:02:21:F
+[17:34:25] remote ufrag=Ns5O cand=
+[17:34:25] ---- SDP ANSWER (raw) ----
+{"exchangeResponse":"{\"control\":3,\"input\":8,\"message\":1,\"messageType\":\"answer\",\"sdp\":\"v=0\\r\\no=- 7643302590107769624 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 1 2\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS 0 1\\r\\nm=video 0 UDP/TLS/RTP/SAVPF 0\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:Ns5O\\r\\na=ice-pwd:imdjjLK9Jo/74jsACQ3QCrtD\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 EE:8D:DB:E2:06:02:21:F1:8E:10:29:1E:C9:5A:B6:D2:36:38:8F:74:FE:81:A3:55:56:CA:F7:F1:96:FA:28:A7\\r\\na=setup:passive\\r\\na=mid:0\\r\\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:3 urn:3gpp:video-orientation\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:1 cc53562a-78e2-49a0-b1a5-49354f2968b2\\r\\na=rtcp-mux\\r\\na=rtcp-rsize\\r\\na=ssrc:1688499863 cname:h8Wy47LsaisKmQnT\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:NH/q\\r\\na=ice-pwd:st60yd3TmWjfk8fxJKScshRC\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 EE:8D:DB:E2:06:02:21:F1:8E:10:29:1E:C9:5A:B6:D2:36:38:8F:74:FE:81:A3:55:56:CA:F7:F1:96:FA:28:A7\\r\\na=setup:passive\\r\\na=mid:1\\r\\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:0 ae4d59b3-9993-43db-88a4-4e1cc07885f1\\r\\na=rtcp-mux\\r\\na=rtpmap:111 opus/48000/2\\r\\na=ssrc:1250930014 cname:h8Wy47LsaisKmQnT\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:NH/q\\r\\na=ice-pwd:st60yd3TmWjfk8fxJKScshRC\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 EE:8D:DB:E2:06:02:21:F1:8E:10:29:1E:C9:5A:B6:D2:36:38:8F:74:FE:81:A3:55:56:CA:F7:F1:96:FA:28:A7\\r\\na=setup:passive\\r\\na=mid:2\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\",\"sdpType\":\"answer\",\"status\":\"success\"}","errorDetails":{"code":null,"message":null}}
+---- end SDP ANSWER (raw) ----
+[17:34:25] DTLS connecting to 192.168.100.10:5000...
+[17:34:25] [DTLS] Initiating handshake with 192.168.100.10:5000...
+[17:34:25] [DTLS] Starting SSL handshake loop...
+[17:34:25] [DTLS] Handshake failed (-0x7100): SSL - Bad input parameters to function
+[17:34:25] DTLS connect failed
+[17:34:27] state: Provisioning
+[17:34:29] state: Provisioning
+[17:34:31] state: Provisioning
+[17:34:33] state: Provisioning
+[17:34:35] state: Provisioning
+[17:34:37] state: Provisioning
+[17:34:39] state: Provisioning
+[17:34:41] state: Provisioning
+[17:34:43] state: Provisioning
+[17:34:45] state: Provisioning
+[17:34:47] state: Provisioning
+[17:38:45] ==== nueva sesion ====
+[17:38:45] Token OK, saltando login
+[17:38:45] Red: OK
+[17:38:45] Obteniendo gsToken...
+[17:38:46] [AUTH] GSSV XSTS OK
+[17:38:47] [AUTH] xhome HTTP 200 OK
+[17:38:47] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[17:38:47] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[17:38:48] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:38:48] [CONSOLES] 1 consola(s) encontrada(s)
+[17:38:48] [CONSOLES] Config IP cargada: 192.168.100.10
+[17:38:58] start id=F4001C131EC5954F
+[17:38:59] Session: 52039257-0546-42B4-B4F0-F3E56BF72A97
+[17:39:00] state: Provisioning
+[17:39:02] state: Provisioned
+[17:39:02] [SDP] ice-ufrag=FprW
+[17:39:02] [SDP] raw 2616 bytes, JSON-escaping...
+[17:39:02] ---- SDP OFFER (sent) ----
+v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:FprW\r\na=ice-pwd:q6Wrs93HBjS4VCO/hDMu5W/q\r\na=candidate:1 1 udp 2122260223 192.168.100.13 17179 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:FprW\r\na=ice-pwd:q6Wrs93HBjS4VCO/hDMu5W/q\r\na=candidate:1 1 udp 2122260223 192.168.100.13 17179 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:FprW\r\na=ice-pwd:q6Wrs93HBjS4VCO/hDMu5W/q\r\na=candidate:1 1 udp 2122260223 192.168.100.13 17179 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:2\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n
+---- end SDP OFFER (sent) ----
+[17:39:02] SDP POST 0 
+[17:39:04] state: Provisioning
+[17:39:04] SDP ANS OK fp=sha-256 E3:75:8B:DB:46:D9:84:3
+[17:39:04] remote ufrag=0Tre cand=
+[17:39:04] ---- SDP ANSWER (raw) ----
+{"exchangeResponse":"{\"control\":3,\"input\":8,\"message\":1,\"messageType\":\"answer\",\"sdp\":\"v=0\\r\\no=- 5084410500726312147 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 1 2\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS 0 1\\r\\nm=video 0 UDP/TLS/RTP/SAVPF 0\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:0Tre\\r\\na=ice-pwd:UaV2Wm1LwIEFKevMIjKjIAAd\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 E3:75:8B:DB:46:D9:84:35:C9:E3:CB:5E:D3:B9:83:3B:1F:B1:AE:89:AA:50:39:9C:37:A1:2E:2B:04:C4:B6:44\\r\\na=setup:passive\\r\\na=mid:0\\r\\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:3 urn:3gpp:video-orientation\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:1 0cc29f32-83a4-4fa6-affb-c940a515529d\\r\\na=rtcp-mux\\r\\na=rtcp-rsize\\r\\na=ssrc:494920607 cname:5f4lGoPgSTzTcuGW\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:s1Sn\\r\\na=ice-pwd:AOXJ4Xgj1sVxvq/eXmhv0x6V\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 E3:75:8B:DB:46:D9:84:35:C9:E3:CB:5E:D3:B9:83:3B:1F:B1:AE:89:AA:50:39:9C:37:A1:2E:2B:04:C4:B6:44\\r\\na=setup:passive\\r\\na=mid:1\\r\\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:0 c16a74b4-38a4-43b8-a83d-a14e24e217c1\\r\\na=rtcp-mux\\r\\na=rtpmap:111 opus/48000/2\\r\\na=ssrc:2533629474 cname:5f4lGoPgSTzTcuGW\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:s1Sn\\r\\na=ice-pwd:AOXJ4Xgj1sVxvq/eXmhv0x6V\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 E3:75:8B:DB:46:D9:84:35:C9:E3:CB:5E:D3:B9:83:3B:1F:B1:AE:89:AA:50:39:9C:37:A1:2E:2B:04:C4:B6:44\\r\\na=setup:passive\\r\\na=mid:2\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\",\"sdpType\":\"answer\",\"status\":\"success\"}","errorDetails":{"code":null,"message":null}}
+---- end SDP ANSWER (raw) ----
+[17:39:04] DTLS connecting to 192.168.100.10:5000...
+[17:39:04] [DTLS] Initiating handshake with 192.168.100.10:5000...
+[17:39:04] [DTLS] Starting SSL handshake loop...
+[17:49:24] ==== nueva sesion ====
+[17:49:24] Token OK, saltando login
+[17:49:24] Red: OK
+[17:49:24] Obteniendo gsToken...
+[17:49:25] [AUTH] GSSV XSTS OK
+[17:49:26] [AUTH] xhome HTTP 200 OK
+[17:49:26] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[17:49:26] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[17:49:26] [CONSOLES] Limpiando y buscando consolas activas...
+[17:49:27] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:49:27] [CONSOLES] 1 consola(s) encontrada(s)
+[17:49:27] [CONSOLES] Config IP cargada: 192.168.100.10
+[17:49:31] start id=F4001C131EC5954F
+[17:49:33] Session: 21D24053-0659-4F78-AF83-9D106CD72115
+[17:49:34] state: Provisioning
+[17:49:35] state: Provisioned
+[17:49:35] [SDP] ice-ufrag=Mgi4
+[17:49:35] [SDP] raw 2616 bytes, JSON-escaping...
+[17:49:35] ---- SDP OFFER (sent) ----
+v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:Mgi4\r\na=ice-pwd:FLNRCPUl52kIcLAya/gdl/ro\r\na=candidate:1 1 udp 2122260223 192.168.100.13 14973 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:Mgi4\r\na=ice-pwd:FLNRCPUl52kIcLAya/gdl/ro\r\na=candidate:1 1 udp 2122260223 192.168.100.13 14973 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:Mgi4\r\na=ice-pwd:FLNRCPUl52kIcLAya/gdl/ro\r\na=candidate:1 1 udp 2122260223 192.168.100.13 14973 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:2\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n
+---- end SDP OFFER (sent) ----
+[17:49:35] SDP POST 0 
+[17:49:37] state: Provisioning
+[17:49:37] SDP ANS OK fp=sha-256 09:57:E6:C1:98:59:98:0
+[17:49:37] remote ufrag=YdGp cand=
+[17:49:37] ---- SDP ANSWER (raw) ----
+{"exchangeResponse":"{\"control\":3,\"input\":8,\"message\":1,\"messageType\":\"answer\",\"sdp\":\"v=0\\r\\no=- 9008983291250238045 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 1 2\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS 0 1\\r\\nm=video 0 UDP/TLS/RTP/SAVPF 0\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:YdGp\\r\\na=ice-pwd:htsRXQMSC548VDhzZ5IFMwbw\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 09:57:E6:C1:98:59:98:05:6B:D9:E1:E5:BE:31:77:10:81:EF:4E:9A:FE:F4:40:95:94:5C:71:D8:87:68:FC:7F\\r\\na=setup:passive\\r\\na=mid:0\\r\\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:3 urn:3gpp:video-orientation\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:1 caf7121c-e069-4836-b34c-e44d557f152f\\r\\na=rtcp-mux\\r\\na=rtcp-rsize\\r\\na=ssrc:1703047603 cname:PuQEgYVOc0XlUEfv\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:MU9V\\r\\na=ice-pwd:LHbOSGLMWmW5gR2+SrXYWPDY\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 09:57:E6:C1:98:59:98:05:6B:D9:E1:E5:BE:31:77:10:81:EF:4E:9A:FE:F4:40:95:94:5C:71:D8:87:68:FC:7F\\r\\na=setup:passive\\r\\na=mid:1\\r\\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:0 c4edf386-6c6f-4336-a7a8-e4690dedebe8\\r\\na=rtcp-mux\\r\\na=rtpmap:111 opus/48000/2\\r\\na=ssrc:938211781 cname:PuQEgYVOc0XlUEfv\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:MU9V\\r\\na=ice-pwd:LHbOSGLMWmW5gR2+SrXYWPDY\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 09:57:E6:C1:98:59:98:05:6B:D9:E1:E5:BE:31:77:10:81:EF:4E:9A:FE:F4:40:95:94:5C:71:D8:87:68:FC:7F\\r\\na=setup:passive\\r\\na=mid:2\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\",\"sdpType\":\"answer\",\"status\":\"success\"}","errorDetails":{"code":null,"message":null}}
+---- end SDP ANSWER (raw) ----
+[17:49:37] DTLS connecting to 192.168.100.10:5000...
+[17:49:37] [DTLS] Initiating handshake with 192.168.100.10:5000...
+[17:49:37] [DTLS] Starting non-blocking SSL handshake loop...
+[17:49:37] [DTLS] Waiting handshake reply... (50/300)
+[17:49:38] [DTLS] Waiting handshake reply... (100/300)
+[17:49:39] [DTLS] Waiting handshake reply... (150/300)
+[17:49:39] [DTLS] Waiting handshake reply... (200/300)
+[17:49:40] [DTLS] Waiting handshake reply... (250/300)
+[17:49:40] [DTLS] Waiting handshake reply... (300/300)
+[17:49:40] [DTLS] Handshake timeout (no response from Xbox)
+[17:49:40] DTLS connect failed
+[17:49:40] state: Provisioning
+[17:49:42] state: Provisioning
+[17:49:44] state: Provisioning
+[17:49:46] state: Provisioning
+[17:49:48] state: Provisioning
+[17:49:50] state: Provisioning
+[17:49:52] state: Provisioning
+[17:52:58] ==== nueva sesion ====
+[17:52:58] Token OK, saltando login
+[17:52:58] Red: OK
+[17:52:58] Obteniendo gsToken...
+[17:52:59] [AUTH] GSSV XSTS OK
+[17:53:00] [AUTH] xhome HTTP 200 OK
+[17:53:00] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[17:53:00] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[17:53:00] [CONSOLES] Limpiando y buscando consolas activas...
+[17:53:01] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:53:01] [CONSOLES] 1 consola(s) encontrada(s)
+[17:53:01] [CONSOLES] Config IP cargada: 192.168.100.10
+[17:53:06] [CONSOLES] Limpiando y buscando consolas activas...
+[17:53:07] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:53:07] [CONSOLES] 1 consola(s) encontrada(s)
+[17:53:07] [CONSOLES] Config IP cargada: 192.168.100.10
+[17:53:12] start id=F4001C131EC5954F
+[17:53:13] Session: 01284816-7084-4CEB-9F28-86E67CCAA9C9
+[17:53:14] state: Provisioning
+[17:53:15] state: Provisioned
+[17:53:15] [SDP] ice-ufrag=ITNJ
+[17:53:15] [SDP] raw 2616 bytes, JSON-escaping...
+[17:53:15] ---- SDP OFFER (sent) ----
+v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:ITNJ\r\na=ice-pwd:ws4Xr2qalcPbchuJWLADqhr9\r\na=candidate:1 1 udp 2122260223 192.168.100.13 41241 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:ITNJ\r\na=ice-pwd:ws4Xr2qalcPbchuJWLADqhr9\r\na=candidate:1 1 udp 2122260223 192.168.100.13 41241 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:ITNJ\r\na=ice-pwd:ws4Xr2qalcPbchuJWLADqhr9\r\na=candidate:1 1 udp 2122260223 192.168.100.13 41241 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:2\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n
+---- end SDP OFFER (sent) ----
+[17:53:15] SDP POST 0 
+[17:53:17] state: Provisioning
+[17:53:17] SDP ANS OK fp=sha-256 D6:A6:C3:A8:50:0B:08:3
+[17:53:17] remote ufrag=4gW/ cand=
+[17:53:17] ---- SDP ANSWER (raw) ----
+{"exchangeResponse":"{\"control\":3,\"input\":8,\"message\":1,\"messageType\":\"answer\",\"sdp\":\"v=0\\r\\no=- 4572493490944661430 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 1 2\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS 0 1\\r\\nm=video 0 UDP/TLS/RTP/SAVPF 0\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:4gW/\\r\\na=ice-pwd:8yx6yLOSbsq56IrV9/qVT+Jb\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 D6:A6:C3:A8:50:0B:08:37:04:27:70:04:71:48:15:E8:7B:AE:7F:10:3E:A8:D8:11:FB:F7:C9:03:E4:32:A1:28\\r\\na=setup:passive\\r\\na=mid:0\\r\\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:3 urn:3gpp:video-orientation\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:1 4a7d0423-4db9-48b5-a410-08d19fcf9dfe\\r\\na=rtcp-mux\\r\\na=rtcp-rsize\\r\\na=ssrc:730739943 cname:FlppuU3VB1u828eS\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:cR8Q\\r\\na=ice-pwd:L7ERhSNo3BabspEOm6uwF+HW\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 D6:A6:C3:A8:50:0B:08:37:04:27:70:04:71:48:15:E8:7B:AE:7F:10:3E:A8:D8:11:FB:F7:C9:03:E4:32:A1:28\\r\\na=setup:passive\\r\\na=mid:1\\r\\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:0 a2d5454b-eecf-4de7-91f5-9eff53532c7e\\r\\na=rtcp-mux\\r\\na=rtpmap:111 opus/48000/2\\r\\na=ssrc:367263104 cname:FlppuU3VB1u828eS\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:cR8Q\\r\\na=ice-pwd:L7ERhSNo3BabspEOm6uwF+HW\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 D6:A6:C3:A8:50:0B:08:37:04:27:70:04:71:48:15:E8:7B:AE:7F:10:3E:A8:D8:11:FB:F7:C9:03:E4:32:A1:28\\r\\na=setup:passive\\r\\na=mid:2\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\",\"sdpType\":\"answer\",\"status\":\"success\"}","errorDetails":{"code":null,"message":null}}
+---- end SDP ANSWER (raw) ----
+[17:53:17] [STUN] Probing Xbox IP 192.168.100.10 for active ICE port...
+[17:53:18] [STUN] No STUN reply on probes, fallback to port 5000
+[17:53:18] DTLS connecting to 192.168.100.10:5000...
+[17:53:18] [DTLS] Initiating handshake with 192.168.100.10:5000...
+[17:53:18] [DTLS] Starting non-blocking SSL handshake loop...
+[17:53:19] [DTLS] Waiting handshake reply... (50/300)
+[17:53:19] [DTLS] Waiting handshake reply... (100/300)
+[17:53:20] [DTLS] Waiting handshake reply... (150/300)
+[17:53:20] [DTLS] Waiting handshake reply... (200/300)
+[17:53:21] [DTLS] Waiting handshake reply... (250/300)
+[17:53:21] [DTLS] Waiting handshake reply... (300/300)
+[17:53:21] [DTLS] Handshake timeout (no response from Xbox)
+[17:53:22] DTLS connect failed
+[17:53:22] state: Provisioning
+[17:53:24] state: Provisioning
+[17:53:26] state: Provisioning
+[17:58:07] ==== nueva sesion ====
+[17:58:08] Token OK, saltando login
+[17:58:09] Red: OK
+[17:58:10] Obteniendo gsToken...
+[17:58:11] [AUTH] GSSV XSTS OK
+[17:58:13] [AUTH] xhome HTTP 200 OK
+[17:58:14] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[17:58:15] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[17:58:19] [CONSOLES] Limpiando y buscando consolas activas...
+[17:58:20] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[17:58:20] [CONSOLES] 1 consola(s) encontrada(s)
+[17:58:21] [CONSOLES] Config IP cargada: 192.168.100.10
+[17:58:28] start id=F4001C131EC5954F
+[17:58:30] Session: B0878EF0-CECC-4621-9CBE-50EC5C9142A1
+[17:58:31] state: Provisioning
+[17:58:33] state: Provisioned
+[17:58:33] [SDP] ice-ufrag=tS4s
+[17:58:34] [SDP] raw 2616 bytes, JSON-escaping...
+[17:58:34] ---- SDP OFFER (sent) ----
+v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:tS4s\r\na=ice-pwd:kGGtK7QSEYoGi3JtOpdGXT9w\r\na=candidate:1 1 udp 2122260223 192.168.100.13 35797 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:tS4s\r\na=ice-pwd:kGGtK7QSEYoGi3JtOpdGXT9w\r\na=candidate:1 1 udp 2122260223 192.168.100.13 35797 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:tS4s\r\na=ice-pwd:kGGtK7QSEYoGi3JtOpdGXT9w\r\na=candidate:1 1 udp 2122260223 192.168.100.13 35797 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:2\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n
+---- end SDP OFFER (sent) ----
+[17:58:34] SDP POST 0 
+[17:58:35] state: Provisioning
+[17:58:35] SDP ANS OK fp=sha-256 55:F4:12:EF:E8:24:42:4
+[17:58:35] remote ufrag=LVV4 pwd=rbQL3pbHrB...
+[17:58:35] ---- SDP ANSWER (raw) ----
+{"exchangeResponse":"{\"control\":3,\"input\":8,\"message\":1,\"messageType\":\"answer\",\"sdp\":\"v=0\\r\\no=- 4468745603256202247 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 1 2\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS 0 1\\r\\nm=video 0 UDP/TLS/RTP/SAVPF 0\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:LVV4\\r\\na=ice-pwd:rbQL3pbHrB3XIDUXm3HmHJOu\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 55:F4:12:EF:E8:24:42:42:63:41:AE:FD:D8:D1:33:93:A6:88:ED:A9:F9:2B:2F:A3:62:20:D1:8F:97:A3:A3:6C\\r\\na=setup:passive\\r\\na=mid:0\\r\\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:3 urn:3gpp:video-orientation\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:1 830f46b1-33c9-4b7d-a832-3a6749f98f3c\\r\\na=rtcp-mux\\r\\na=rtcp-rsize\\r\\na=ssrc:3929870369 cname:w4M5VdIYBiiTertW\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:pLb+\\r\\na=ice-pwd:K63v8abPjTWSZii37PJCkPDw\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 55:F4:12:EF:E8:24:42:42:63:41:AE:FD:D8:D1:33:93:A6:88:ED:A9:F9:2B:2F:A3:62:20:D1:8F:97:A3:A3:6C\\r\\na=setup:passive\\r\\na=mid:1\\r\\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:0 4cd08312-d063-4f73-af57-e149267ce635\\r\\na=rtcp-mux\\r\\na=rtpmap:111 opus/48000/2\\r\\na=ssrc:3456760176 cname:w4M5VdIYBiiTertW\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:pLb+\\r\\na=ice-pwd:K63v8abPjTWSZii37PJCkPDw\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 55:F4:12:EF:E8:24:42:42:63:41:AE:FD:D8:D1:33:93:A6:88:ED:A9:F9:2B:2F:A3:62:20:D1:8F:97:A3:A3:6C\\r\\na=setup:passive\\r\\na=mid:2\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\",\"sdpType\":\"answer\",\"status\":\"success\"}","errorDetails":{"code":null,"message":null}}
+---- end SDP ANSWER (raw) ----
+[17:58:35] [STUN] Probing Xbox IP 192.168.100.10 (user=LVV4:tS4s)...
+[17:58:36] [STUN] Probed ports completed, using port 5000
+[17:58:36] DTLS connecting to 192.168.100.10:5000...
+[17:58:36] [DTLS] Initiating handshake with 192.168.100.10:5000...
+[17:58:36] [DTLS] Starting non-blocking SSL handshake loop...
+[17:58:37] [DTLS] Waiting handshake reply... (50/300)
+[17:58:37] [DTLS] Waiting handshake reply... (100/300)
+[17:58:38] [DTLS] Waiting handshake reply... (150/300)
+[17:58:39] [DTLS] Waiting handshake reply... (200/300)
+[17:58:39] [DTLS] Waiting handshake reply... (250/300)
+[17:58:40] [DTLS] Waiting handshake reply... (300/300)
+[17:58:40] [DTLS] Handshake timeout (no response from Xbox)
+[17:58:40] DTLS connect failed
+[17:58:40] state: Provisioning
+[17:58:42] state: Provisioning
+[17:58:44] state: Provisioning
+[18:01:55] ==== nueva sesion ====
+[18:01:55] Token OK, saltando login
+[18:01:55] Red: OK
+[18:01:55] Obteniendo gsToken...
+[18:01:56] [AUTH] GSSV XSTS OK
+[18:01:57] [AUTH] xhome HTTP 200 OK
+[18:01:57] gsToken OK host=wus2.core.gssv-play-prodxhome.xboxlive.com
+[18:01:57] gsToken len=1007 pref=eyJhbGciOiJSUzI1NiIs
+[18:01:57] [CONSOLES] Limpiando y buscando consolas activas...
+[18:01:58] [CONSOLES] HTTP 200 -- {"result":[{"id":"F4001C131EC5954F","name":"Xbox de la sala de estar","locale":"
+[18:01:58] [CONSOLES] 1 consola(s) encontrada(s)
+[18:01:58] [CONSOLES] Config IP cargada: 192.168.100.10
+[18:02:03] start id=F4001C131EC5954F
+[18:02:04] Session: FBE4425D-43FE-43FB-84E5-CB4B0B7015C8
+[18:02:05] state: Provisioning
+[18:02:07] state: Provisioned
+[18:02:07] [SDP] ice-ufrag=pylB
+[18:02:07] [SDP] raw 2616 bytes, JSON-escaping...
+[18:02:07] ---- SDP OFFER (sent) ----
+v=0\r\no=- 8775432198765432 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 98 99\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:pylB\r\na=ice-pwd:ETqeNODBEC9D+BF2Af2PZAty\r\na=candidate:1 1 udp 2122260223 192.168.100.13 16163 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 H264/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=fmtp:96 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=640c1f\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:98 H264/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=640c1f\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 103 9 0 8\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:pylB\r\na=ice-pwd:ETqeNODBEC9D+BF2Af2PZAty\r\na=candidate:1 1 udp 2122260223 192.168.100.13 16163 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:103 ISAC/16000\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:pylB\r\na=ice-pwd:ETqeNODBEC9D+BF2Af2PZAty\r\na=candidate:1 1 udp 2122260223 192.168.100.13 16163 typ host generation 0\r\na=end-of-candidates\r\na=fingerprint:sha-256 DA:E4:D3:93:1B:58:10:24:BD:EE:7B:26:C0:EB:52:2E:BA:CB:66:7B:45:13:86:43:59:8A:46:5F:F1:53:31:B2\r\na=setup:actpass\r\na=mid:2\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n
+---- end SDP OFFER (sent) ----
+[18:02:07] SDP POST 0 
+[18:02:09] state: Provisioning
+[18:02:09] SDP ANS OK fp=sha-256 C5:00:6F:23:7A:A7:DF:B
+[18:02:09] remote ufrag=aAqz pwd=4hCNrtosPn...
+[18:02:09] ---- SDP ANSWER (raw) ----
+{"exchangeResponse":"{\"control\":3,\"input\":8,\"message\":1,\"messageType\":\"answer\",\"sdp\":\"v=0\\r\\no=- 2226015733700224851 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 1 2\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS 0 1\\r\\nm=video 0 UDP/TLS/RTP/SAVPF 0\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:aAqz\\r\\na=ice-pwd:4hCNrtosPnyv4LbXDs9Y3Ubk\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 C5:00:6F:23:7A:A7:DF:BD:9E:64:24:11:67:4F:6D:18:96:D1:4D:06:B3:8D:90:AD:57:DA:D2:78:58:F6:7E:97\\r\\na=setup:passive\\r\\na=mid:0\\r\\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:3 urn:3gpp:video-orientation\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:1 ae41a247-9866-4515-8fca-21091af76e52\\r\\na=rtcp-mux\\r\\na=rtcp-rsize\\r\\na=ssrc:2599591257 cname:fX0ClttL0FY4zIsu\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\nc=IN IP4 0.0.0.0\\r\\na=rtcp:9 IN IP4 0.0.0.0\\r\\na=ice-ufrag:z6tq\\r\\na=ice-pwd:lNHhcDTzEBD12YryihgMM260\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 C5:00:6F:23:7A:A7:DF:BD:9E:64:24:11:67:4F:6D:18:96:D1:4D:06:B3:8D:90:AD:57:DA:D2:78:58:F6:7E:97\\r\\na=setup:passive\\r\\na=mid:1\\r\\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\\r\\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\\r\\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\\r\\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\\r\\na=sendonly\\r\\na=msid:0 97027c12-a39f-4b2b-b55e-6db963eec46b\\r\\na=rtcp-mux\\r\\na=rtpmap:111 opus/48000/2\\r\\na=ssrc:504973839 cname:fX0ClttL0FY4zIsu\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:z6tq\\r\\na=ice-pwd:lNHhcDTzEBD12YryihgMM260\\r\\na=ice-options:trickle renomination\\r\\na=fingerprint:sha-256 C5:00:6F:23:7A:A7:DF:BD:9E:64:24:11:67:4F:6D:18:96:D1:4D:06:B3:8D:90:AD:57:DA:D2:78:58:F6:7E:97\\r\\na=setup:passive\\r\\na=mid:2\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n\",\"sdpType\":\"answer\",\"status\":\"success\"}","errorDetails":{"code":null,"message":null}}
+---- end SDP ANSWER (raw) ----
+[18:02:09] [STUN] Probing Xbox IP 192.168.100.10 ports (10257, 5050, 9002, 3074, 5000)...
+[18:02:11] [STUN] No reply on probe ports, using default port 10257
+[18:02:11] DTLS connecting to 192.168.100.10:10257...
+[18:02:11] [DTLS] Initiating handshake with 192.168.100.10:10257...
+[18:02:11] [DTLS] Starting non-blocking SSL handshake loop...
+[18:02:12] [DTLS] Waiting handshake reply... (50/300)
+[18:02:13] [DTLS] Waiting handshake reply... (100/300)
+[18:02:13] [DTLS] Waiting handshake reply... (150/300)
+[18:02:14] [DTLS] Waiting handshake reply... (200/300)
+[18:02:14] [DTLS] Waiting handshake reply... (250/300)
+[18:02:15] [DTLS] Waiting handshake reply... (300/300)
+[18:02:15] [DTLS] Handshake timeout (no response from Xbox)
+[18:02:15] DTLS connect failed
+[18:02:15] state: Provisioning
+[18:02:17] state: Provisioning
+[18:02:19] state: Provisioning

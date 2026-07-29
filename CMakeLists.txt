@@ -118,6 +118,9 @@ if(CURL_FOUND)
     list(APPEND LINK_LIBS curl z)
 endif()
 
+# mbedTLS for WebRTC DTLS handshake & SRTP key extraction
+list(APPEND LINK_LIBS mbedtls mbedcrypto mbedx509)
+
 # libnx always last — provides Switch OS/crypto symbols needed by curl and SDL2
 # z (zlib) only needed when curl or SDL2 is present
 if(CURL_FOUND OR SDL2_FOUND)

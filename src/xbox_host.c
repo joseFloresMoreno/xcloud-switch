@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <sys/stat.h>
 
 #ifdef HAVE_CURL
 #include <curl/curl.h>
@@ -229,6 +230,61 @@ int xbox_host_add_manual(XboxHostList* list, const char* name, const char* ip) {
     h->is_manual = 1;
     list->count++;
     return list->count - 1;
+}
+
+int xbox_host_load_config(XboxHostList* list, const char* filepath) {
+    if (!list || !filepath) return -1;
+    FILE* f = fopen(filepath, "r");
+    if (!f) {
+        /* Ensure directory exists and create a template config file */
+        mkdir("/switch", 0777);
+        mkdir("/switch/greenlight", 0777);
+        FILE* wf = fopen(filepath, "w");
+        if (wf) {
+            fprintf(wf, "# Greenlight Switch Configuration\n");
+            fprintf(wf, "# Escribe la IP de tu Xbox local a continuacion (ej. ip=192.168.1.100)\n");
+            fprintf(wf, "ip=\n");
+            fclose(wf);
+            ui_log("[CONSOLES] Plantilla de config creada en %s", filepath);
+        }
+        return -1;
+    }
+
+    char line[128];
+    char config_ip[64] = "";
+    while (fgets(line, sizeof(line), f)) {
+        /* Strip newline/CR */
+        char* p = line;
+        while (*p) {
+            if (*p == '\r' || *p == '\n') *p = '\0';
+            p++;
+        }
+        if (line[0] == '#' || line[0] == '\0') continue;
+
+        if (strncmp(line, "ip=", 3) == 0) {
+            strncpy(config_ip, line + 3, sizeof(config_ip) - 1);
+        } else if (strstr(line, ".") != NULL && config_ip[0] == '\0') {
+            /* Raw IP address in file */
+            strncpy(config_ip, line, sizeof(config_ip) - 1);
+        }
+    }
+    fclose(f);
+
+    if (config_ip[0] != '\0') {
+        ui_log("[CONSOLES] Config IP cargada: %s", config_ip);
+        /* Assign IP to any console lacking an IP */
+        for (int i = 0; i < list->count; i++) {
+            if (list->hosts[i].ip[0] == '\0') {
+                strncpy(list->hosts[i].ip, config_ip, sizeof(list->hosts[i].ip) - 1);
+            }
+        }
+        /* If list is empty, add manual host */
+        if (list->count == 0) {
+            xbox_host_add_manual(list, "Xbox (Config IP)", config_ip);
+        }
+        return 0;
+    }
+    return -1;
 }
 
 void xbox_host_list_clear(XboxHostList* list) {

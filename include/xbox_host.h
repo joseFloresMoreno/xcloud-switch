@@ -50,6 +50,9 @@ int  xbox_host_discover(XboxHostList* list);
 /* Add a console by IP address (entered manually by the user). */
 int  xbox_host_add_manual(XboxHostList* list, const char* name, const char* ip);
 
+/* Load saved console IP configuration from file */
+int  xbox_host_load_config(XboxHostList* list, const char* filepath);
+
 void xbox_host_list_clear(XboxHostList* list);
 
 const char* xbox_host_state_string(XboxHostState state);
