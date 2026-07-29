@@ -250,13 +250,26 @@ int webrtc_sdp_parse_answer_field(const char *sdp_json,
                                    char *out, int out_size) {
     if (!sdp_json || !field || !out) return -1;
 
+    /* Prioritize active media section (m=application or m=audio) for ICE credentials,
+       because m=video 0 is often rejected/disabled in BUNDLE and has dummy credentials */
+    const char *start_search = sdp_json;
+    if (strcmp(field, "ice-ufrag") == 0 || strcmp(field, "ice-pwd") == 0) {
+        const char *app_media = strstr(sdp_json, "m=application");
+        if (!app_media) app_media = strstr(sdp_json, "m=audio");
+        if (app_media) start_search = app_media;
+    }
+
     /* Look for the field as an SDP attribute: "a=<field>:" or "a=<field> " */
     char needle_colon[64], needle_space[64];
     snprintf(needle_colon, sizeof(needle_colon), "a=%s:", field);
     snprintf(needle_space, sizeof(needle_space), "a=%s ", field);
 
-    const char *p = strstr(sdp_json, needle_colon);
-    if (!p) p = strstr(sdp_json, needle_space);
+    const char *p = strstr(start_search, needle_colon);
+    if (!p) p = strstr(start_search, needle_space);
+    if (!p && start_search != sdp_json) {
+        p = strstr(sdp_json, needle_colon);
+        if (!p) p = strstr(sdp_json, needle_space);
+    }
     if (!p) return -1;
 
     /* Advance past the field name and separator */

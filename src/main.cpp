@@ -461,25 +461,8 @@ int main(void) {
                                     }
                                     if (remote_port <= 0) remote_port = 10257; /* Xbox xHome local streaming port */
 
-                                    /* Perform STUN hole-punching / port probe to wake up Xbox ICE listener */
+                                    /* Perform STUN hole-punching using the exact bound UDP socket from SDP offer */
                                     const char *local_ufrag = webrtc_sdp_get_local_ufrag();
-
-                                    /* Post local ICE candidate to server API */
-                                    char local_cand_json[512] = "";
-                                    webrtc_ice_create_local_candidate(local_ufrag, local_cand_json, sizeof(local_cand_json), NULL);
-                                    if (local_cand_json[0] && api) {
-                                        char ice_resp[512] = "";
-                                        int iceret = xcloud_api_send_ice(api, conn_session_id, local_cand_json, ice_resp, sizeof(ice_resp));
-                                        ui_log("[ICE] POST local candidate ret=%d", iceret);
-                                    }
-
-                                    /* Fetch trickled remote ICE candidate from server API */
-                                    if (api) {
-                                        char remote_ice_resp[1024] = "";
-                                        if (xcloud_api_get_ice(api, conn_session_id, remote_ice_resp, sizeof(remote_ice_resp)) == 0) {
-                                            ui_log("[ICE] GET remote ice: %.80s", remote_ice_resp);
-                                        }
-                                    }
 
                                     remote_port = webrtc_ice_probe_remote_port(conn_ice_sockfd, remote_ip, remote_port,
                                                                                 remote_ufrag, local_ufrag, remote_pwd);

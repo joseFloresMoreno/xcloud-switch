@@ -129,20 +129,32 @@ static int build_stun_binding_request(uint8_t *buf, int max_len,
     memcpy(buf + pos + 4, username, ulen);
     pos += 4 + ulen_pad;
 
-    /* Attribute 2: PRIORITY (0x0024) */
+    /* 2. PRIORITY (0x0024) */
     buf[pos] = 0x00; buf[pos + 1] = 0x24;
     buf[pos + 2] = 0x00; buf[pos + 3] = 0x04;
-    uint32_t prio = 1853824767; /* Typical Host candidate priority */
+    uint32_t prio = 1845493503; /* 0x6E00FEFF - Typical Host candidate priority */
     buf[pos + 4] = (uint8_t)(prio >> 24); buf[pos + 5] = (uint8_t)(prio >> 16);
     buf[pos + 6] = (uint8_t)(prio >> 8);  buf[pos + 7] = (uint8_t)(prio & 0xFF);
     pos += 8;
+
+    /* 3. ICE-CONTROLLING (0x802A) - 8 bytes random tie-breaker */
+    buf[pos] = 0x80; buf[pos + 1] = 0x2A;
+    buf[pos + 2] = 0x00; buf[pos + 3] = 0x08;
+    static const uint8_t tie_breaker[8] = { 0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0xDE, 0xF0 };
+    memcpy(buf + pos + 4, tie_breaker, 8);
+    pos += 12;
+
+    /* 4. USE-CANDIDATE (0x0025) - 0 bytes (flags nomination) */
+    buf[pos] = 0x00; buf[pos + 1] = 0x25;
+    buf[pos + 2] = 0x00; buf[pos + 3] = 0x00;
+    pos += 4;
 
     /* Set header length before MESSAGE-INTEGRITY calculation */
     int body_len_for_hmac = pos - 20 + 24; /* +24 for MESSAGE-INTEGRITY attribute itself */
     buf[2] = (uint8_t)(body_len_for_hmac >> 8);
     buf[3] = (uint8_t)(body_len_for_hmac & 0xFF);
 
-    /* Attribute 3: MESSAGE-INTEGRITY (0x0008) - 20 bytes HMAC-SHA1 using remote_pwd */
+    /* 5. MESSAGE-INTEGRITY (0x0008) - 20 bytes HMAC-SHA1 using remote_pwd */
     if (remote_pwd && remote_pwd[0]) {
         buf[pos] = 0x00; buf[pos + 1] = 0x08;
         buf[pos + 2] = 0x00; buf[pos + 3] = 0x14; /* 20 bytes */
@@ -177,13 +189,7 @@ int webrtc_ice_probe_remote_port(int sockfd, const char *remote_ip, int default_
     int stun_auth_len = build_stun_binding_request(stun_req_auth, sizeof(stun_req_auth),
                                                    remote_ufrag, local_ufrag, remote_pwd);
 
-    /* Plain 20-byte STUN Binding Request */
-    static const uint8_t stun_req_raw[20] = {
-        0x00, 0x01, 0x00, 0x00, 0x21, 0x12, 0xA4, 0x42,
-        0x58, 0x62, 0x6F, 0x78, 0x53, 0x77, 0x69, 0x74, 0x63, 0x68, 0x49, 0x43
-    };
-
-    ui_log("[STUN] Probing Xbox IP %s ports (10257, 5050, 9002, 3074, 5000)...", remote_ip);
+    ui_log("[STUN] Probing Xbox IP %s (user=%s:%s)...", remote_ip, remote_ufrag ? remote_ufrag : "?", local_ufrag ? local_ufrag : "?");
 
     struct timeval tv = { 0, 100000 }; /* 100ms timeout */
     setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
@@ -200,24 +206,23 @@ int webrtc_ice_probe_remote_port(int sockfd, const char *remote_ip, int default_
             dest.sin_port = htons((uint16_t)port);
             inet_pton(AF_INET, remote_ip, &dest.sin_addr);
 
-            /* Send both raw and authenticated STUN packets */
-            sendto(sockfd, stun_req_raw, sizeof(stun_req_raw), 0, (struct sockaddr *)&dest, sizeof(dest));
+            /* Send authenticated STUN Binding Request */
             sendto(sockfd, stun_req_auth, stun_auth_len, 0, (struct sockaddr *)&dest, sizeof(dest));
 
-            /* Check for reply */
+            /* Check for reply (either STUN response from Xbox or incoming STUN request from Xbox) */
             uint8_t buf[512];
             struct sockaddr_in from;
             socklen_t fromlen = sizeof(from);
             ssize_t ret = recvfrom(sockfd, buf, sizeof(buf), 0, (struct sockaddr *)&from, &fromlen);
             if (ret > 0) {
                 active_port = ntohs(from.sin_port);
-                ui_log("[STUN] Xbox STUN reply from %s:%d! (pass %d)", remote_ip, active_port, pass + 1);
+                ui_log("[STUN] Xbox reply/packet from %s:%d! (len=%d, pass %d)", remote_ip, active_port, (int)ret, pass + 1);
                 return active_port;
             }
         }
         usleep(30000);
     }
 
-    ui_log("[STUN] No reply on probe ports, using default port %d", active_port);
+    ui_log("[STUN] Probed ports completed, using port %d", active_port);
     return active_port;
 }
