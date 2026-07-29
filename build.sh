@@ -47,5 +47,12 @@ echo "  Build Complete"
 echo "=============================================="
 echo "  NRO: $BUILD_DIR/greenlight-switch.nro"
 echo ""
-echo "Install: copy greenlight-switch.nro to /switch/ on SD card"
+
+# Copy NRO to dist/ for easy access
+DIST_DIR="$PROJECT_DIR/dist"
+mkdir -p "$DIST_DIR"
+cp "$BUILD_DIR/greenlight-switch.nro" "$DIST_DIR/greenlight-switch.nro"
+echo "  Copiado a: $DIST_DIR/greenlight-switch.nro"
+echo ""
+echo "Install: copy dist/greenlight-switch.nro to /switch/ on SD card"
 echo ""
