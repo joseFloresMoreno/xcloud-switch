@@ -19,6 +19,9 @@ output.map
 # Reference repo (not part of this project)
 greenlight-repo/
 
+# Local archive of old file versions (reference only, not part of project)
+archive/
+
 # Editor / OS
 .vscode/
 *.swp

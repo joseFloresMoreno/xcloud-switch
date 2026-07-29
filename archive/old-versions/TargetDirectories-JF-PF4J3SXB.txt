@@ -1,3 +1,0 @@
-/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build/CMakeFiles/greenlight-switch.elf.dir
-/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Jose_Flores/OneDrive - PROTIVITI DIGITAL LEARNING SOLUTIONS SPA/Documentos/PROYECTOS_VSC/GREENLIGHT_SWITCH/build/CMakeFiles/rebuild_cache.dir
